@@ -141,7 +141,7 @@ else if (strpos($requestUri, '/api') === 0) {
 
 $filePath = $buildPath . $requestUri;
 $imagePath = __DIR__ . $requestUri;
-if($requestUri==="/" || $requestUri===""){
+if($requestUri==="/" || $requestUri==="" || strpos($requestUri, '/createProject') === 0){
     $mimeType = mime_content_type($buildPath . '/index.html');
     header("Content-Type: $mimeType");
     readfile($buildPath . '/index.html');
